@@ -49,7 +49,7 @@ namespace Xades.Implementations
                 return nodeList;
             }
 
-            public XmlElement GetXml()
+            public new XmlElement GetXml()
             {
                 return base.GetXml();
             }

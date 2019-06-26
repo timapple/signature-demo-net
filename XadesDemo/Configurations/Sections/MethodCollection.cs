@@ -17,7 +17,7 @@ namespace XadesDemo.Configurations.Sections
             return ((MethodElement)(element)).MethodName;
         }
 
-        public MethodElement this[string name]
+        public new MethodElement this[string name]
         {
             get {
                 var key = BaseGetAllKeys().FirstOrDefault(x => string.Equals((string)x, name, StringComparison.InvariantCultureIgnoreCase));

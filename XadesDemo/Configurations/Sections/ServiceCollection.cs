@@ -17,7 +17,7 @@ namespace XadesDemo.Configurations.Sections
             return ((ServiceElement)(element)).ServiceName;
         }
 
-        public ServiceElement this[string name]
+        public new ServiceElement this[string name]
         {
             get
             {

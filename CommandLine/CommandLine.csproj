@@ -24,7 +24,8 @@
     <DefineConstants>TRACE;DEBUG;CSX_EITHER_INTERNAL; CSX_REM_EITHER_BEYOND_2; CSX_ENUM_INTERNAL; ERRH_INTERNAL; ERRH_DISABLE_INLINE_METHODS; CSX_MAYBE_INTERNAL; CSX_REM_EITHER_FUNC</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\CommandLine.XML</DocumentationFile>
+    <DocumentationFile>
+    </DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
