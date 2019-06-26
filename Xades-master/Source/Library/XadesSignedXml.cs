@@ -305,13 +305,14 @@ namespace Microsoft.Xades
 		{
 			this.cachedXadesObjectDocument = null;
 			this.signatureStandard = KnownSignatureStandard.XmlDsig;
-		}
+            this.signedInfoIdBuffer = Guid.NewGuid().ToString();
+        }
 
-		/// <summary>
-		/// Constructor for the XadesSignedXml class
-		/// </summary>
-		/// <param name="signatureElement">XmlElement used to create the instance</param>
-		public XadesSignedXml(XmlElement signatureElement) : base(signatureElement)
+        /// <summary>
+        /// Constructor for the XadesSignedXml class
+        /// </summary>
+        /// <param name="signatureElement">XmlElement used to create the instance</param>
+        public XadesSignedXml(XmlElement signatureElement) : base(signatureElement)
 		{
 			this.cachedXadesObjectDocument = null;
 		}
@@ -509,8 +510,9 @@ namespace Microsoft.Xades
 				this.AddObject(dataObject); //Add the XAdES object
 
 				reference = new Reference();
-			    reference.DigestMethod = "http://www.w3.org/2001/04/xmldsig-more#gostr3411";
-				signedPropertiesIdBuffer = xadesObject.QualifyingProperties.SignedProperties.Id;
+                //reference.DigestMethod = "http://www.w3.org/2001/04/xmldsig-more#gostr3411";
+                reference.DigestMethod = "urn:ietf:params:xml:ns:cpxmlsec:algorithms:gostr34112012-256";
+                signedPropertiesIdBuffer = xadesObject.QualifyingProperties.SignedProperties.Id;
 				reference.Uri = "#" + signedPropertiesIdBuffer;
 				reference.Type = SignedPropertiesType;
 				this.AddReference(reference); //Add the XAdES object reference
@@ -1468,7 +1470,8 @@ namespace Microsoft.Xades
                 if (reference2.DigestMethod == null)
                 {
                     //reference2.DigestMethod = "http://www.w3.org/2000/09/xmldsig#sha1";
-                    reference2.DigestMethod = "http://www.w3.org/2001/04/xmldsig-more#gostr3411";
+                    //reference2.DigestMethod = "http://www.w3.org/2001/04/xmldsig-more#gostr3411";
+                    reference2.DigestMethod = "urn:ietf:params:xml:ns:cpxmlsec:algorithms:gostr34112012-256";
                 }
                 //reference2.UpdateHashValue(this.m_containingDocument, refList);
                 object m_containingDocument = SignedXml_m_containingDocument.GetValue(this);

@@ -4,8 +4,8 @@ using System.Security;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Security.Cryptography.Xml;
-using CryptoPro.Sharpei;
-using CryptoPro.Sharpei.Xml;
+//using CryptoPro.Sharpei;
+//using CryptoPro.Sharpei.Xml;
 using Microsoft.Xades;
 using Org.BouncyCastle.X509;
 using Xades.Abstractions;
@@ -22,7 +22,8 @@ namespace Xades.Implementations
         {
             HashAlgorithmMap = new Dictionary<string, string>
             {
-                { "http://www.w3.org/2001/04/xmldsig-more#gostr3411", "GOST3411" }
+                //{ "http://www.w3.org/2001/04/xmldsig-more#gostr3411", "GOST3411" }
+                { "urn:ietf:params:xml:ns:cpxmlsec:algorithms:gostr34102012-gostr34112012-256" , "GOST3411_2012_256" }
             };
         }
 
@@ -44,7 +45,8 @@ namespace Xades.Implementations
         {
             get
             {
-                return CPSignedXml.XmlDsigGost3410UrlObsolete;
+                //return CPSignedXml.XmlDsigGost3410UrlObsolete;
+                return CryptoPro.Sharpei.Xml.CPSignedXml.XmlDsigGost3410_2012_256Url;
             }
         } 
 
@@ -52,13 +54,15 @@ namespace Xades.Implementations
         {
             get
             {
-                return CPSignedXml.XmlDsigGost3411UrlObsolete;
+                //return CPSignedXml.XmlDsigGost3411UrlObsolete;
+                return CryptoPro.Sharpei.Xml.CPSignedXml.XmlDsigGost3411_2012_256Url;
             }
         }
 
         public AsymmetricAlgorithm GetAsymmetricAlgorithm(X509Certificate2 certificate, string privateKeyPassword)
         {
-            var provider = (Gost3410CryptoServiceProvider)certificate.PrivateKey;
+            //var provider = (CryptoPro.Sharpei.Gost3410CryptoServiceProvider)certificate.PrivateKey;
+            var provider = (CryptoPro.Sharpei.Gost3410_2012_256CryptoServiceProvider)certificate.PrivateKey;
 
             if (!string.IsNullOrEmpty(privateKeyPassword))
             {
@@ -90,10 +94,12 @@ namespace Xades.Implementations
 
         public AsymmetricSignatureFormatter GetSignatureFormatter(X509Certificate2 certificate)
         {
-            if (certificate.PrivateKey is Gost3410CryptoServiceProvider)
+            //if (certificate.PrivateKey is CryptoPro.Sharpei.Gost3410CryptoServiceProvider)
+            if (certificate.PrivateKey is CryptoPro.Sharpei.Gost3410_2012_256CryptoServiceProvider)
             {
 #pragma warning disable 612
-                var signatureDescription = (SignatureDescription)CryptoConfig.CreateFromName(CPSignedXml.XmlDsigGost3410UrlObsolete);
+                //var signatureDescription = (SignatureDescription)CryptoConfig.CreateFromName(CPSignedXml.XmlDsigGost3410UrlObsolete);
+                var signatureDescription = (SignatureDescription)CryptoConfig.CreateFromName(CryptoPro.Sharpei.Xml.CPSignedXml.XmlDsigGost3410_2012_256Url);
 #pragma warning restore 612
                 return signatureDescription.CreateFormatter(certificate.PrivateKey);
             }
@@ -141,7 +147,8 @@ namespace Xades.Implementations
 
         private static HashAlgorithm GetHashAlgorithm()
         {
-            return HashAlgorithm.Create("GOST3411");
+            //return HashAlgorithm.Create("GOST3411");
+            return HashAlgorithm.Create("GOST3411_2012_256");
         }
     }
 }
