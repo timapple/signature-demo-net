@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xades.IntegrationTests", "X
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xades", "Xades\Xades.csproj", "{AD2AE594-3CCA-489C-B2FF-FE757306ECCA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library", "Xades-master\Source\Library\Library.csproj", "{EE1DC57A-344A-4B0A-82CE-5FD328C14894}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Xades", "Xades-master\Source\Library\Microsoft.Xades.csproj", "{EE1DC57A-344A-4B0A-82CE-5FD328C14894}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{2E1147CD-6319-4777-BB02-D7FBDEA38C21}"
 EndProject

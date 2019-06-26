@@ -75,12 +75,14 @@
     <Compile Include="Helpers\XmlDocumentHelper.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Xades-master\Source\Library\Library.csproj">
-      <Project>{ee1dc57a-344a-4b0a-82ce-5fd328c14894}</Project>
-      <Name>Library</Name>
+    <ProjectReference Include="..\Xades-master\Source\Library\Microsoft.Xades.csproj">
+      <Project>{EE1DC57A-344A-4B0A-82CE-5FD328C14894}</Project>
+      <Name>Microsoft.Xades</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
