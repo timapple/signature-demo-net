@@ -48,6 +48,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{CD
 		examples\команды.txt = examples\команды.txt
 	EndProjectSection
 EndProject
+Project("{FF286327-C783-4F7A-AB73-9BCBAD0D4460}") = "NuGetPackage", "NuGetPackage\NuGetPackage.nuproj", "{46908649-8203-443B-9668-CD3592681E61}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -78,6 +80,10 @@ Global
 		{E1BD3C65-49C3-49E7-BABA-C60980CB3F20}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1BD3C65-49C3-49E7-BABA-C60980CB3F20}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1BD3C65-49C3-49E7-BABA-C60980CB3F20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46908649-8203-443B-9668-CD3592681E61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46908649-8203-443B-9668-CD3592681E61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46908649-8203-443B-9668-CD3592681E61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46908649-8203-443B-9668-CD3592681E61}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -88,5 +94,8 @@ Global
 		{EE1DC57A-344A-4B0A-82CE-5FD328C14894} = {154612DE-C842-4928-8B87-C338A620237C}
 		{E1BD3C65-49C3-49E7-BABA-C60980CB3F20} = {154612DE-C842-4928-8B87-C338A620237C}
 		{CD2751BC-1C50-43D0-8A2C-EF0C9208EB10} = {5956DF34-7AA4-4E1F-A654-4FE8A40529FE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {91399904-AEAD-444A-B3FB-7FD7B7207F3D}
 	EndGlobalSection
 EndGlobal
